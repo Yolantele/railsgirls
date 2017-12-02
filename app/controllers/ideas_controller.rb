@@ -10,6 +10,8 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @idea = Idea.find(params[:id])
+    @comment = Comment.new(idea_id: @idea.id)
   end
 
   # GET /ideas/new
